@@ -2141,7 +2141,7 @@ const RAY = new THREE.Raycaster(); const _ndc = new THREE.Vector2();
 const PTR = new Map(); let TM = null; let GEST = null; let LAST_PTR = null;
 function setToolModel(id) {
   if (TM) { scene.remove(TM); TM = null; } if (!id || !SITE) return;
-  TM = toolModel(id); const s = clamp(SITE.S * 0.9, 0.06, 0.3); TM.scale.setScalar(s); TM.visible = false; scene.add(TM);
+  TM = toolModel(id); const s = clamp(SITE.S * 0.55, 0.045, 0.22); TM.scale.setScalar(s); TM.visible = false; scene.add(TM);
 }
 function computeHit(px, py) {
   if (!SITE) return null; _ndc.set(px / innerWidth * 2 - 1, -(py / innerHeight) * 2 + 1); RAY.setFromCamera(_ndc, camera);
